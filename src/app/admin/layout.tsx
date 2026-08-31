@@ -16,14 +16,14 @@ export default async function AdminLayout({
 
   return (
     <div className="flex min-h-[100dvh] flex-col bg-ink-50">
-      <header className="sticky top-0 z-30 border-b border-ink-200 bg-white">
+      <header className="sticky top-0 z-30 border-b border-green-900/10 bg-white">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6">
           <div className="flex items-center gap-3">
-            <span className="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-brand-700 font-bold text-white">
+            <span className="inline-flex h-9 w-9 items-center justify-center rounded bg-green-700 font-bold text-white">
               S
             </span>
             <div className="leading-tight">
-              <p className="font-bold text-ink-950">Skytraine Admin</p>
+              <p className="font-bold text-ink-900">Skytraine Admin</p>
               <p className="text-xs text-ink-500">Opportunity Network</p>
             </div>
           </div>

@@ -55,8 +55,8 @@ export function SubmitForm() {
       )}
 
       <div className="space-y-8">
-        <section className="rounded-2xl border border-ink-100 bg-white p-6 shadow-sm">
-          <h2 className="mb-4 text-lg font-semibold text-ink-950">
+        <section className="rounded border border-green-900/10 bg-white p-6 shadow-sm">
+          <h2 className="mb-4 text-lg font-semibold text-green-700">
             Contributor information
           </h2>
           <div className="space-y-4">
@@ -91,8 +91,8 @@ export function SubmitForm() {
           </div>
         </section>
 
-        <section className="rounded-2xl border border-ink-100 bg-white p-6 shadow-sm">
-          <h2 className="mb-4 text-lg font-semibold text-ink-950">
+        <section className="rounded border border-green-900/10 bg-white p-6 shadow-sm">
+          <h2 className="mb-4 text-lg font-semibold text-green-700">
             Opportunity information
           </h2>
           <div className="space-y-4">
@@ -241,7 +241,7 @@ export function SubmitForm() {
       <button
         type="submit"
         disabled={pending}
-        className="mt-6 inline-flex w-full items-center justify-center rounded-lg bg-accent-500 px-6 py-3.5 text-base font-semibold text-ink-950 shadow-sm transition hover:bg-accent-400 disabled:cursor-not-allowed disabled:opacity-60"
+        className="mt-6 inline-flex w-full items-center justify-center rounded border border-green-800 bg-green-700 px-6 py-3.5 text-base font-semibold text-white shadow-sm transition hover:bg-green-800 disabled:cursor-not-allowed disabled:opacity-60"
       >
         {pending ? "Submitting…" : "Submit Opportunity"}
       </button>

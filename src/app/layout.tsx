@@ -1,5 +1,12 @@
 import type { Metadata } from "next";
+import { Jost } from "next/font/google";
 import "./globals.css";
+
+const jost = Jost({
+  subsets: ["latin"],
+  variable: "--font-jost",
+  weight: ["400", "500", "600", "700", "800", "900"],
+});
 
 export const metadata: Metadata = {
   title: {
@@ -16,7 +23,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={jost.variable}>
       <body className="flex min-h-[100dvh] flex-col">{children}</body>
     </html>
   );

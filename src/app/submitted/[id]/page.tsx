@@ -30,33 +30,33 @@ export default async function SubmittedPage({
 
   return (
     <>
-      <header className="sticky top-0 z-30 border-b border-ink-100 bg-white/90 backdrop-blur">
+      <header className="sticky top-0 z-30 border-b border-green-900/10 bg-white shadow-sm">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-3">
           <Logo />
           <Link
             href="/"
-            className="text-sm font-medium text-ink-600 transition hover:text-ink-950"
+            className="text-sm font-medium text-green-700 transition hover:text-green-900"
           >
             ← Back to home
           </Link>
         </div>
       </header>
 
-      <main className="flex flex-1 items-center justify-center bg-ink-50 py-16">
+      <main className="flex flex-1 items-center justify-center bg-brand-50 py-16">
         <div className="mx-auto max-w-xl px-5">
-          <div className="overflow-hidden rounded-2xl border border-ink-100 bg-white shadow-sm">
-            <div className="bg-brand-700 px-6 py-6 text-center">
-              <div className="mx-auto inline-flex h-14 w-14 items-center justify-center rounded-full bg-white/15 text-3xl">
-                ✓
+          <div className="overflow-hidden rounded border border-green-700/20 bg-white shadow-sm">
+            <div className="bg-green-700/10 px-6 py-6 text-center">
+              <div className="mx-auto inline-flex h-14 w-14 items-center justify-center rounded-full bg-green-700/15 text-3xl">
+                <span className="text-green-700">✓</span>
               </div>
-              <h1 className="mt-4 text-2xl font-bold text-white">
+              <h1 className="mt-4 text-2xl font-bold text-green-700">
                 Opportunity submitted successfully
               </h1>
             </div>
             <div className="p-6 sm:p-8">
-              <div className="rounded-xl border border-ink-100 bg-ink-50 p-5 text-center">
+              <div className="rounded border border-green-700/15 bg-green-700/10 p-5 text-center">
                 <p className="text-sm font-medium text-ink-500">Your Opportunity ID</p>
-                <p className="mt-1 text-3xl font-extrabold tracking-tight text-brand-700">
+                <p className="mt-1 text-3xl font-extrabold tracking-tight text-green-700">
                   {opportunity.opportunityId}
                 </p>
                 <p className="mt-2 text-xs text-ink-400">
@@ -78,21 +78,21 @@ export default async function SubmittedPage({
                 .
               </p>
 
-              <div className="mt-6 rounded-xl border border-accent-200 bg-accent-50 p-4 text-center text-sm text-ink-800">
+              <div className="mt-6 rounded border border-green-700/15 bg-green-700/10 p-4 text-center text-sm text-ink-800">
                 If this opportunity results in a successful placement, you&apos;ll
-                earn a <span className="font-semibold">₦20,000</span> reward.
+                earn a <span className="font-semibold text-green-700">₦20,000</span> reward.
               </div>
 
               <div className="mt-6 flex flex-col gap-3 sm:flex-row">
                 <Link
                   href="/submit"
-                  className="inline-flex flex-1 items-center justify-center rounded-lg border border-ink-200 bg-white px-5 py-3 text-sm font-semibold text-ink-900 transition hover:bg-ink-50"
+                  className="inline-flex flex-1 items-center justify-center rounded border border-green-700 bg-white px-5 py-3 text-sm font-semibold text-green-700 transition hover:bg-brand-50"
                 >
                   Submit another opportunity
                 </Link>
                 <Link
                   href="/"
-                  className="inline-flex flex-1 items-center justify-center rounded-lg bg-accent-500 px-5 py-3 text-sm font-semibold text-ink-950 transition hover:bg-accent-400"
+                  className="inline-flex flex-1 items-center justify-center rounded border border-green-800 bg-green-700 px-5 py-3 text-sm font-semibold text-white transition hover:bg-green-800"
                 >
                   Return home
                 </Link>

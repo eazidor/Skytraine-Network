@@ -1,43 +1,49 @@
 @import "tailwindcss";
 
 @theme {
-  --color-brand-50: #eef4ff;
-  --color-brand-100: #dce7fd;
-  --color-brand-200: #c0d4fc;
-  --color-brand-300: #95b8fa;
-  --color-brand-400: #6393f6;
-  --color-brand-500: #3f6df0;
-  --color-brand-600: #294ce4;
-  --color-brand-700: #2139d2;
-  --color-brand-800: #2131aa;
-  --color-brand-900: #202f86;
-  --color-brand-950: #182052;
+  --font-sans: var(--font-jost), "Jost", ui-sans-serif, system-ui, sans-serif;
 
-  --color-accent-50: #fff8eb;
-  --color-accent-100: #ffedc6;
-  --color-accent-200: #ffd988;
-  --color-accent-300: #ffc04a;
-  --color-accent-400: #ffa420;
-  --color-accent-500: #f98407;
-  --color-accent-600: #dd6502;
-  --color-accent-700: #b74706;
-  --color-accent-800: #94380c;
-  --color-accent-900: #7a300d;
+  --color-brand-50: #edf7ef;
+  --color-brand-100: #d7eddb;
+  --color-brand-200: #b3dcba;
+  --color-brand-300: #84c292;
+  --color-brand-400: #55a56a;
+  --color-brand-500: #2f8f43;
+  --color-brand-600: #1d8b28;
+  --color-brand-700: #158627;
+  --color-brand-800: #106b20;
+  --color-brand-900: #093b11;
+  --color-brand-950: #05260b;
 
-  --color-ink-50: #f6f7f9;
-  --color-ink-100: #eceef2;
-  --color-ink-200: #d4d9e2;
-  --color-ink-300: #adb7c7;
-  --color-ink-400: #7f8fa6;
-  --color-ink-500: #5e708b;
-  --color-ink-600: #4a5872;
-  --color-ink-700: #3e495d;
-  --color-ink-800: #373f4f;
-  --color-ink-900: #313744;
-  --color-ink-950: #11151d;
+  --color-accent-50: #e9fbef;
+  --color-accent-100: #c9f5d8;
+  --color-accent-200: #97ebb6;
+  --color-accent-300: #5bda89;
+  --color-accent-400: #2cca63;
+  --color-accent-500: #08bf3f;
+  --color-accent-600: #06a437;
+  --color-accent-700: #07822e;
+  --color-accent-800: #0a6727;
+  --color-accent-900: #0a5524;
+  --color-accent-950: #023417;
+
+  --color-ink-50: #f7f7f7;
+  --color-ink-100: #ececec;
+  --color-ink-200: #e0e0e0;
+  --color-ink-300: #c9c9c9;
+  --color-ink-400: #a3a3a3;
+  --color-ink-500: #707070;
+  --color-ink-600: #4f4f4f;
+  --color-ink-700: #3d3d3d;
+  --color-ink-800: #2b2b2b;
+  --color-ink-900: #232323;
+  --color-ink-950: #141414;
 }
 
 @layer base {
+  html {
+    font-family: var(--font-sans);
+  }
   body {
     @apply bg-white text-ink-900 antialiased;
   }
