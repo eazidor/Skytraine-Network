@@ -100,8 +100,8 @@ export default function HomePage() {
           </h2>
           <p className="mt-4 text-lg leading-relaxed text-ink-600">
             We connect talented, trained Skytraine graduates with legitimate
-            employment opportunities. When the people you know about get hired
-            — and we confirm a real, successful placement — you get paid.
+            employment opportunities. When an opportunity you submit results in
+            a graduate being hired - and we confirm the successful placement - you get paid.
           </p>
         </div>
         <div className="mt-12 grid gap-6 sm:grid-cols-3">
