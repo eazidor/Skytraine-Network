@@ -1,0 +1,238 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum OpportunityStatus {
+  SUBMITTED
+  UNDER_REVIEW
+  REJECTED
+  VERIFIED
+  MATCHED
+  APPLICATION_SUBMITTED
+  INTERVIEW
+  PLACEMENT_CONFIRMED
+  CLOSED
+}
+
+enum RewardStatus {
+  NOT_ELIGIBLE
+  PENDING
+  PAYABLE
+  PAID
+}
+
+enum ApplicationStatus {
+  NOT_STARTED
+  SUBMITTED
+  REJECTED
+  SHORTLISTED
+  INTERVIEW
+  SELECTED
+  WITHDRAWN
+}
+
+enum RejectionReason {
+  FAKE_UNVERIFIABLE
+  EXPIRED
+  DUPLICATE
+  INSUFFICIENT_INFORMATION
+  NOT_RELEVANT
+  OTHER
+}
+
+model Admin {
+  id           String   @id @default(cuid())
+  name         String
+  email        String   @unique
+  passwordHash String
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  amendedStatuses OpportunityStatusChange[]
+  matches          Match[]
+}
+
+model Contributor {
+  id        String   @id @default(cuid())
+  fullName  String
+  whatsapp  String   @unique
+  createdAt DateTime @default(now())
+
+  opportunities Opportunity[]
+  rewards       Reward[]
+}
+
+model Opportunity {
+  id                 String            @id @default(cuid())
+  opportunityId      String            @unique
+  companyName        String
+  positionTitle      String
+  tradeRequired      String
+  workersRequired    Int               @default(1)
+  location           String
+  description        String
+  requirements       String?
+  applicationDetails String
+  deadline           String?
+  sourceLink         String?
+  additionalInfo     String?
+
+  status       OpportunityStatus @default(SUBMITTED)
+  rewardStatus RewardStatus      @default(NOT_ELIGIBLE)
+  rewardAmount Int               @default(0)
+
+  internalNotes String?
+  rejectionReason RejectionReason?
+  rejectionNote  String?
+  verifiedBy    String?
+  verifiedAt    DateTime?
+  rejectedAt    DateTime?
+
+  submittedAt DateTime @default(now())
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  contributor   Contributor @relation(fields: [contributorId], references: [id])
+  contributorId String
+
+  statusHistory OpportunityStatusChange[]
+  matches       Match[]
+  applications  Application[]
+  placements    Placement[]
+  reward        Reward?
+
+  @@index([contributorId])
+  @@index([status])
+}
+
+model OpportunityStatusChange {
+  id            String            @id @default(cuid())
+  fromStatus    OpportunityStatus?
+  toStatus      OpportunityStatus
+  note          String?
+  changedAt     DateTime          @default(now())
+
+  opportunity   Opportunity @relation(fields: [opportunityId], references: [id])
+  opportunityId String
+
+  changedBy   Admin?  @relation(fields: [changedById], references: [id])
+  changedById String?
+
+  @@index([opportunityId])
+}
+
+model Graduate {
+  id             String   @id @default(cuid())
+  fullName       String
+  whatsapp       String?
+  trade          String
+  location       String?
+  experience     String?
+  certifications String?
+  cvFile         String?
+  availability   String?
+  notes          String?
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  matches      Match[]
+  applications Application[]
+  placements   Placement[]
+}
+
+model Match {
+  id          String   @id @default(cuid())
+  matchedDate DateTime @default(now())
+  adminNotes  String?
+  createdAt   DateTime @default(now())
+
+  opportunity   Opportunity @relation(fields: [opportunityId], references: [id])
+  opportunityId String
+
+  graduate   Graduate @relation(fields: [graduateId], references: [id])
+  graduateId String
+
+  matchedBy   Admin?  @relation(fields: [matchedById], references: [id])
+  matchedById String?
+
+  applications Application[]
+
+  @@unique([opportunityId, graduateId])
+  @@index([opportunityId])
+  @@index([graduateId])
+}
+
+model Application {
+  id           String            @id @default(cuid())
+  appliedDate  DateTime          @default(now())
+  status       ApplicationStatus @default(NOT_STARTED)
+  notes        String?
+  createdAt    DateTime          @default(now())
+  updatedAt    DateTime          @updatedAt
+
+  opportunity   Opportunity @relation(fields: [opportunityId], references: [id])
+  opportunityId String
+
+  graduate   Graduate @relation(fields: [graduateId], references: [id])
+  graduateId String
+
+  match   Match?  @relation(fields: [matchId], references: [id])
+  matchId String?
+
+  placement Placement?
+
+  @@index([opportunityId])
+  @@index([graduateId])
+}
+
+model Placement {
+  id             String   @id @default(cuid())
+  confirmedDate  DateTime @default(now())
+  employer       String
+  position       String
+  notes          String?
+  createdAt      DateTime @default(now())
+
+  opportunity   Opportunity @relation(fields: [opportunityId], references: [id])
+  opportunityId String
+
+  graduate   Graduate @relation(fields: [graduateId], references: [id])
+  graduateId String
+
+  application   Application? @relation(fields: [applicationId], references: [id])
+  applicationId String?      @unique
+
+  reward Reward?
+
+  @@index([opportunityId])
+  @@index([graduateId])
+}
+
+model Reward {
+  id              String       @id @default(cuid())
+  amount          Int          @default(20000)
+  status          RewardStatus @default(NOT_ELIGIBLE)
+  becamePayableAt DateTime?
+  paidAt          DateTime?
+  paymentReference String?
+  paymentNotes    String?
+  createdAt       DateTime     @default(now())
+  updatedAt       DateTime     @updatedAt
+
+  opportunity   Opportunity @relation(fields: [opportunityId], references: [id])
+  opportunityId String      @unique
+
+  contributor   Contributor @relation(fields: [contributorId], references: [id])
+  contributorId String
+
+  placement   Placement? @relation(fields: [placementId], references: [id])
+  placementId String?    @unique
+
+  @@index([contributorId])
+  @@index([status])
+}
