@@ -21,7 +21,7 @@ export function Logo({ dark = false }: { dark?: boolean }) {
       >
         Skytraine
         <span className="block text-[11px] font-semibold uppercase tracking-[0.18em] text-accent-500">
-          Opportunity Network
+          Alumni Network
         </span>
       </span>
     </Link>

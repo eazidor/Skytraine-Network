@@ -24,7 +24,7 @@ export default async function AdminLayout({
             </span>
             <div className="leading-tight">
               <p className="font-bold text-ink-900">Skytraine Admin</p>
-              <p className="text-xs text-ink-500">Opportunity Network</p>
+              <p className="text-xs text-ink-500">Alumni Network</p>
             </div>
           </div>
           <div className="flex items-center gap-3">

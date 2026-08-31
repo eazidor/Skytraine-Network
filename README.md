@@ -1,4 +1,4 @@
-# Skytraine Opportunity Network
+# Skytraine Alumni Network
 
 A simple MVP web application for collecting legitimate employment opportunities
 from people connected to Skytraine, verifying them, matching suitable Skytraine

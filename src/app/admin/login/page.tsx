@@ -11,14 +11,14 @@ export default function AdminLoginPage() {
         <div className="mt-8 rounded border border-green-900/10 bg-white p-6 shadow-sm">
           <h1 className="text-xl font-bold text-green-700">Admin sign in</h1>
           <p className="mt-1 text-sm text-ink-500">
-            Sign in to manage the Opportunity Network.
+            Sign in to manage the Alumni Network.
           </p>
           <div className="mt-6">
             <LoginForm />
           </div>
         </div>
         <p className="mt-6 text-center text-xs text-ink-500">
-          Skytraine Opportunity Network — Admin
+          Skytraine Alumni Network — Admin
         </p>
       </div>
     </div>

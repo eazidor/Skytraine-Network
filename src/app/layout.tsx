@@ -10,8 +10,8 @@ const jost = Jost({
 
 export const metadata: Metadata = {
   title: {
-    default: "Skytraine Opportunity Network",
-    template: "%s | Skytraine Opportunity Network",
+    default: "Skytraine Alumni Network",
+    template: "%s | Skytraine Alumni Network",
   },
   description:
     "Submit legitimate employment opportunities and connect skilled Skytraine graduates. ₦20,000 reward for every successful placement.",

@@ -33,14 +33,14 @@ export default function HomePage() {
         <div className="mx-auto grid max-w-6xl gap-12 px-5 py-16 sm:py-24 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
           <div>
             <p className="mb-4 inline-flex items-center rounded border border-green-800/20 bg-white px-3 py-1 text-xs font-semibold uppercase tracking-wider text-green-700">
-              Skytraine Opportunity Network
+              Skytraine Alumni Network
             </p>
             <h1 className="text-4xl font-extrabold leading-[1.1] tracking-tight text-black sm:text-5xl lg:text-6xl">
               Know about a genuine opportunity for a{" "}
               <span className="text-green-700">skilled worker?</span>
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-ink-700">
-              Submit it to the Skytraine Opportunity Network. If your submitted
+              Submit it to the Skytraine Alumni Network. If your submitted
               opportunity results in a Skytraine graduate being successfully
               placed, you receive{" "}
               <span className="font-bold text-green-700">₦20,000</span>.

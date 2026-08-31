@@ -25,7 +25,7 @@ export default function SubmitPage() {
         <div className="mx-auto max-w-2xl px-5">
           <div className="text-center">
             <p className="text-sm font-semibold uppercase tracking-wider text-green-700">
-              Skytraine Opportunity Network
+              Skytraine Alumni Network
             </p>
             <h1 className="mt-2 text-3xl font-bold tracking-tight text-green-700 sm:text-4xl">
               Submit an Opportunity
