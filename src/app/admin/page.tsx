@@ -22,6 +22,9 @@ export default async function AdminDashboardPage() {
     rewardsPaid,
     totalOpportunities,
     totalGraduates,
+    alumniSubmitted,
+    alumniActive,
+    alumniPlaced,
   ] = await Promise.all([
     prisma.opportunity.count({ where: { status: "SUBMITTED" } }),
     prisma.opportunity.count({ where: { status: "UNDER_REVIEW" } }),
@@ -33,6 +36,9 @@ export default async function AdminDashboardPage() {
     prisma.reward.count({ where: { status: "PAID" } }),
     prisma.opportunity.count(),
     prisma.graduate.count(),
+    prisma.alumniApplication.count({ where: { status: "SUBMITTED" } }),
+    prisma.alumniApplication.count({ where: { status: "ACTIVE" } }),
+    prisma.alumniApplication.count({ where: { status: "PLACED" } }),
   ]);
 
   const cards: Card[] = [
@@ -44,6 +50,9 @@ export default async function AdminDashboardPage() {
     { label: "Placements", value: placements, href: "/admin/opportunities?filter=PLACEMENT_CONFIRMED" },
     { label: "Rewards payable", value: rewardsPayable, href: "/admin/rewards?filter=PAYABLE", accent: true },
     { label: "Rewards paid", value: rewardsPaid, href: "/admin/rewards?filter=PAID" },
+    { label: "Alumni submitted", value: alumniSubmitted, href: "/admin/alumni?filter=SUBMITTED" },
+    { label: "Alumni active", value: alumniActive, href: "/admin/alumni?filter=ACTIVE" },
+    { label: "Alumni placed", value: alumniPlaced, href: "/admin/alumni?filter=PLACED" },
   ];
 
   return (
@@ -88,6 +97,12 @@ export default async function AdminDashboardPage() {
           className="rounded-lg border border-ink-200 bg-white px-4 py-2.5 text-sm font-semibold text-ink-800 transition hover:bg-ink-100"
         >
           Manage graduates
+        </Link>
+        <Link
+          href="/admin/alumni"
+          className="rounded-lg border border-ink-200 bg-white px-4 py-2.5 text-sm font-semibold text-ink-800 transition hover:bg-ink-100"
+        >
+          Alumni applications
         </Link>
       </div>
     </div>

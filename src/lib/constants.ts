@@ -1,4 +1,5 @@
 import type {
+  AlumniApplicationStatus,
   ApplicationStatus,
   OpportunityStatus,
   RejectionReason,
@@ -79,4 +80,20 @@ export const REWARD_FLOW: RewardStatus[] = [
   "PENDING",
   "PAYABLE",
   "PAID",
+];
+
+export const ALUMNI_APPLICATION_STATUS_LABELS: Record<AlumniApplicationStatus, string> = {
+  SUBMITTED: "Application Submitted",
+  ACTIVE: "Active",
+  EXPIRED: "Expired",
+  PLACED: "Placed",
+  SUSPENDED: "Suspended",
+};
+
+export const ALUMNI_APPLICATION_STATUS_FLOW: AlumniApplicationStatus[] = [
+  "SUBMITTED",
+  "ACTIVE",
+  "EXPIRED",
+  "PLACED",
+  "SUSPENDED",
 ];

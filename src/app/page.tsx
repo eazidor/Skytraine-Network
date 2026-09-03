@@ -20,62 +20,79 @@ export default function HomePage() {
             <a href="#how-it-works" className="transition hover:text-green-900">How it works</a>
             <a href="#reward" className="transition hover:text-green-900">Reward</a>
           </nav>
-          <Link
-            href="/submit"
-            className="inline-flex items-center justify-center rounded border border-green-800 bg-green-700 px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-green-800"
-          >
-            Submit an Opportunity
-          </Link>
         </div>
       </header>
 
       <section className="relative overflow-hidden border-b border-green-900/10 bg-brand-50">
-        <div className="mx-auto grid max-w-6xl gap-12 px-5 py-16 sm:py-24 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
-          <div>
+        <div className="mx-auto max-w-6xl px-5 py-16 sm:py-24">
+          <div className="max-w-3xl">
             <p className="mb-4 inline-flex items-center rounded border border-green-800/20 bg-white px-3 py-1 text-xs font-semibold uppercase tracking-wider text-green-700">
               Skytraine Alumni Network
             </p>
             <h1 className="text-4xl font-extrabold leading-[1.1] tracking-tight text-black sm:text-5xl lg:text-6xl">
-              Know about a genuine opportunity for a{" "}
-              <span className="text-green-700">skilled worker?</span>
+              Stay Connected Beyond Your{" "}
+              <span className="text-green-700">Training</span>
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-ink-700">
-              Submit it to the Skytraine Alumni Network. If your submitted
-              opportunity results in a Skytraine graduate being successfully
-              placed, you receive{" "}
-              <span className="font-bold text-green-700">₦20,000</span>.
-            </p>
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <Link
-                href="/submit"
-                className="inline-flex items-center justify-center rounded border border-green-800 bg-green-700 px-6 py-3.5 text-base font-semibold text-white shadow-sm transition hover:bg-green-800"
-              >
-                Submit an Opportunity
-              </Link>
-            </div>
-            <p className="mt-6 text-sm text-ink-500">
-              No account needed. We&apos;ll keep you updated via WhatsApp.
+              The Skytraine Alumni Network connects people who have trained with
+              Skytraine, helping graduates stay connected with Skytraine, fellow
+              alumni, and opportunities beyond the classroom.
             </p>
           </div>
+        </div>
+      </section>
 
-          <div className="overflow-hidden rounded border border-green-700/20 bg-white shadow-sm">
-            <div className="flex items-center justify-between border-b border-green-700/15 bg-green-700/10 px-6 py-4">
-              <span className="text-sm font-semibold text-green-700">Your reward</span>
-              <span className="inline-flex items-center rounded-full bg-green-700/15 px-3 py-1 text-xs font-semibold text-green-700">
-                Per successful placement
-              </span>
+      <section className="bg-brand-50 py-16 sm:py-20">
+        <div className="mx-auto max-w-6xl px-5">
+          <h2 className="text-center text-3xl font-bold tracking-tight text-green-700 sm:text-4xl">
+            What can you do?
+          </h2>
+          <div className="mt-12 grid gap-6 sm:grid-cols-2">
+            <div className="overflow-hidden rounded border border-green-700/20 bg-white shadow-sm">
+              <div className="border-b border-green-700/10 bg-green-700/5 px-6 py-4">
+                <h3 className="text-lg font-bold text-green-700">Apply to the Alumni Network</h3>
+              </div>
+              <div className="px-6 py-6">
+                <p className="text-lg font-semibold text-ink-900">Looking for work?</p>
+                <p className="mt-2 text-ink-700 leading-relaxed">
+                  Apply to the Skytraine Alumni Network to be considered for
+                  relevant employment opportunities.
+                </p>
+                <p className="mt-3 text-sm text-ink-500">
+                  There is no application fee. The Alumni Network is a benefit
+                  of training with Skytraine.
+                </p>
+                <Link
+                  href="/apply"
+                  className="mt-6 inline-flex items-center justify-center rounded border border-green-800 bg-green-700 px-6 py-3 text-base font-semibold text-white shadow-sm transition hover:bg-green-800"
+                >
+                  Apply to the Alumni Network
+                </Link>
+              </div>
             </div>
-            <div className="px-6 py-8 text-center">
-              <p className="text-6xl font-extrabold tracking-tight text-green-700">
-                ₦20,000
-              </p>
-              <p className="mt-3 text-ink-700">
-                for every successful placement of a Skytraine graduate
-              </p>
-            </div>
-            <div className="mx-6 mb-6 rounded border border-green-700/15 bg-green-700/10 px-4 py-3 text-sm text-ink-700">
-              Clear and simple — if your opportunity leads to a graduate being
-              placed, you&apos;re paid ₦20,000.
+
+            <div className="overflow-hidden rounded border border-green-700/20 bg-white shadow-sm">
+              <div className="border-b border-green-700/10 bg-green-700/5 px-6 py-4">
+                <h3 className="text-lg font-bold text-green-700">Submit an Opportunity</h3>
+              </div>
+              <div className="px-6 py-6">
+                <p className="text-lg font-semibold text-ink-900">Know about a genuine opportunity for a skilled worker?</p>
+                <p className="mt-2 text-ink-700 leading-relaxed">
+                  Submit it to the Skytraine Alumni Network. If your submitted
+                  opportunity results in a Skytraine graduate being successfully
+                  placed, you receive{" "}
+                  <span className="font-bold text-green-700">₦20,000</span>.
+                </p>
+                <p className="mt-3 text-sm text-ink-500">
+                  No account needed. We&apos;ll keep you updated via WhatsApp.
+                </p>
+                <Link
+                  href="/submit"
+                  className="mt-6 inline-flex items-center justify-center rounded border border-green-800 bg-green-700 px-6 py-3 text-base font-semibold text-white shadow-sm transition hover:bg-green-800"
+                >
+                  Submit an Opportunity
+                </Link>
+              </div>
             </div>
           </div>
         </div>
@@ -126,7 +143,7 @@ export default function HomePage() {
             How it works
           </h2>
           <p className="mx-auto mt-3 max-w-xl text-center text-ink-600">
-            A simple, transparent six-step process from submission to reward.
+            The Alumni Network connects Skytraine graduates with genuine opportunities. Here is the process from submission to reward.
           </p>
           <ol className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {process.map((step, i) => (
@@ -142,27 +159,6 @@ export default function HomePage() {
               </li>
             ))}
           </ol>
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-6xl px-5 py-16 sm:py-20">
-        <div className="overflow-hidden rounded border border-green-700/20 bg-green-700/10">
-          <div className="flex flex-col items-center gap-6 px-6 py-12 text-center">
-            <h2 className="text-2xl font-bold tracking-tight text-green-700 sm:text-3xl">
-              Have a genuine opportunity to share?
-            </h2>
-            <p className="max-w-xl text-ink-700">
-              Know about a job opening, vacancy, or hiring need you trust?
-              Submit it now and earn ₦20,000 when a Skytraine graduate is
-              successfully placed.
-            </p>
-            <Link
-              href="/submit"
-              className="inline-flex items-center justify-center rounded border border-green-800 bg-green-700 px-6 py-3.5 text-base font-semibold text-white shadow-sm transition hover:bg-green-800"
-            >
-              Submit an Opportunity
-            </Link>
-          </div>
         </div>
       </section>
 

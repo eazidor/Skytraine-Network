@@ -1,4 +1,4 @@
-import { OPPORTUNITY_STATUS_LABELS, REWARD_STATUS_LABELS } from "@/lib/constants";
+import { ALUMNI_APPLICATION_STATUS_LABELS, OPPORTUNITY_STATUS_LABELS, REWARD_STATUS_LABELS } from "@/lib/constants";
 
 const statusStyles: Record<string, string> = {
   SUBMITTED: "bg-sky-50 text-sky-700 border-sky-200",
@@ -10,6 +10,14 @@ const statusStyles: Record<string, string> = {
   INTERVIEW: "bg-cyan-50 text-cyan-700 border-cyan-200",
   PLACEMENT_CONFIRMED: "bg-green-50 text-green-700 border-green-200",
   CLOSED: "bg-ink-50 text-ink-500 border-ink-200",
+};
+
+const alumniStyles: Record<string, string> = {
+  SUBMITTED: "bg-sky-50 text-sky-700 border-sky-200",
+  ACTIVE: "bg-emerald-50 text-emerald-700 border-emerald-200",
+  EXPIRED: "bg-ink-50 text-ink-500 border-ink-200",
+  PLACED: "bg-green-50 text-green-700 border-green-200",
+  SUSPENDED: "bg-red-50 text-red-700 border-red-200",
 };
 
 const rewardStyles: Record<string, string> = {
@@ -39,6 +47,20 @@ export function RewardBadge({ status }: { status: string }) {
       }`}
     >
       {REWARD_STATUS_LABELS[status as keyof typeof REWARD_STATUS_LABELS] ?? status}
+    </span>
+  );
+}
+
+export function AlumniStatusBadge({ status }: { status: string }) {
+  return (
+    <span
+      className={`inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-medium ${
+        alumniStyles[status] ?? "bg-ink-50 text-ink-600 border-ink-200"
+      }`}
+    >
+      {ALUMNI_APPLICATION_STATUS_LABELS[
+        status as keyof typeof ALUMNI_APPLICATION_STATUS_LABELS
+      ] ?? status}
     </span>
   );
 }

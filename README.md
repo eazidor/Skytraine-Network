@@ -1,15 +1,23 @@
 # Skytraine Alumni Network
 
-A simple MVP web application for collecting legitimate employment opportunities
-from people connected to Skytraine, verifying them, matching suitable Skytraine
-graduates, tracking the application to placement, and recording a ₦20,000
-successful-placement reward for the original contributor.
+A simple MVP web application for the Skytraine Alumni Network. The site serves
+two audiences:
+
+1. **People with genuine opportunities** — submit a legitimate employment
+   opportunity, which is verified and matched to a suitable Skytraine graduate.
+   When the graduate is successfully placed, the original contributor receives a
+   ₦20,000 reward.
+2. **Skytraine graduates looking for work** — apply to the Alumni Network to stay
+   connected with Skytraine and be considered for relevant employment
+   opportunities.
 
 > This is a **V1 / MVP**. It intentionally does **not** include a public job
-> feed, contributor accounts, automated WhatsApp, AI matching, employer
+> feed, contributor/graduate accounts, automated WhatsApp, AI matching, employer
 > dashboards, or payment processing.
 
-## Core flow
+## Core flows
+
+### Submit an Opportunity
 
 1. A contributor submits an opportunity (no account needed).
 2. The system issues a unique **Opportunity ID** (e.g. `OPP-0047`).
@@ -22,6 +30,25 @@ successful-placement reward for the original contributor.
 
 The full lifecycle stays attached to the original Opportunity ID and the original
 contributor is always preserved.
+
+### Apply to the Alumni Network
+
+1. A Skytraine graduate applies with their contact details, trade, skills,
+   experience, location, and CV link.
+2. The system issues a unique **Application ID** (e.g. `ALN-0001`) and shows a
+   confirmation page.
+3. An admin reviews the application and can **activate** the graduate's active
+   employment-support period (default 6 months).
+4. The graduate remains an alumnus permanently; only the active support period
+   expires. They can apply again for active employment support later.
+5. When the graduate is successfully placed and completes their first month of
+   work, the **₦20,000** success-fee condition applies.
+
+There is **no application fee**, **no membership fee**, **no subscription**, and
+**no renewal fee**. The Alumni Network is a benefit of training with Skytraine.
+
+Application statuses: `Application Submitted → Active → Expired / Placed`
+(with `Suspended` for exceptional cases).
 
 ## Tech stack
 
@@ -67,6 +94,13 @@ Requires **Node 20+** and **PostgreSQL**.
    - Public site: `http://localhost:3000`
    - Admin login: `http://localhost:3000/admin/login`
 
+To apply the committed `AlumniApplication` migration to an existing environment
+without creating a new one, use:
+
+```bash
+npm run db:deploy
+```
+
 ## Useful scripts
 
 | Script | Purpose |
@@ -93,11 +127,16 @@ Requires **Node 20+** and **PostgreSQL**.
 - **Application** — tracks one graduate's application for one opportunity.
 - **Placement** — records a successful placement (employer, position, date).
 - **Reward** — ₦20,000 reward linked to an opportunity, contributor and placement.
+- **AlumniApplication** — a graduate's application to the Alumni Network, with
+  their contact details, trade, skills, experience, location, CV link, active
+  support dates, and placement status.
 
 Opportunity lifecycle statuses: `SUBMITTED → UNDER_REVIEW → VERIFIED → MATCHED →
 APPLICATION_SUBMITTED → INTERVIEW → PLACEMENT_CONFIRMED` (with `REJECTED` and `CLOSED`).
 
 Reward statuses (tracked separately): `NOT_ELIGIBLE → PENDING → PAYABLE → PAID`.
+
+Alumni application statuses: `SUBMITTED → ACTIVE → EXPIRED / PLACED` (with `SUSPENDED`).
 
 ## Configuration
 

@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     template: "%s | Skytraine Alumni Network",
   },
   description:
-    "Submit legitimate employment opportunities and connect skilled Skytraine graduates. ₦20,000 reward for every successful placement.",
+    "The Skytraine Alumni Network connects people who have trained with Skytraine. Apply to stay connected and be considered for opportunities, or submit a genuine employment opportunity and earn ₦20,000 for a successful placement.",
 };
 
 export default function RootLayout({
