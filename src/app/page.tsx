@@ -36,7 +36,7 @@ export default function HomePage() {
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-ink-700">
               The Skytraine Alumni Network connects people who have trained with
               Skytraine, helping graduates stay connected with Skytraine, fellow
-              alumni, and opportunities beyond the classroom.
+              alumni, and opportunities beyond training.
             </p>
           </div>
         </div>
@@ -45,7 +45,7 @@ export default function HomePage() {
       <section className="bg-brand-50 py-16 sm:py-20">
         <div className="mx-auto max-w-6xl px-5">
           <h2 className="text-center text-3xl font-bold tracking-tight text-green-700 sm:text-4xl">
-            What can you do?
+            Here&apos;s what you can do
           </h2>
           <div className="mt-12 grid gap-6 sm:grid-cols-2">
             <div className="overflow-hidden rounded border border-green-700/20 bg-white shadow-sm">
